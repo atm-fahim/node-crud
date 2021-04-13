@@ -1,0 +1,33 @@
+
+<div class="col-12">
+    <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Merchant Update</h5>
+            </div>
+            <div class="card-body">
+                <div class="clearfix">
+                    <form method="POST" action="/save-update">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Merchant Name</label>
+                                    <input class="form-control form-control-lg" type="text" name="marchant_name" placeholder="Enter merchant name" value="<%= data.username%>"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter merchant email address" value="<%= data.email%>" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        </div>

@@ -1,0 +1,60 @@
+<div class="col-12">
+    <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Merchant Add</h5>
+            </div>
+            <div class="card-body">
+                <div class="clearfix">
+                    <form method="POST" action="/save-merchant">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Merchant Name</label>
+                                    <input class="form-control form-control-lg" type="text" name="marchant_name" placeholder="Enter merchant name" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter merchant email address" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <td>n°</td>
+                        <td>Name</td>
+                        <td>Address</td>
+                        <td>Phone</td>
+                        <td>Email</td>
+                        <td>Actions</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if (data) { %>
+                        <% for(var i = 0; i < data.length; i++) { %>
+                          <tr>
+                            <td><%= (i + 1) %></td>
+                            <td><%= data[i].username %></td>
+                            <td><%= data[i].address %></td>
+                            <td><%= data[i].phone %></td>
+                            <td><%= data[i].email %></td>
+                            <td>
+                              <a href="/edit-merchant/<%= data[i].id %>" class="btn btn-info">Edit</a>
+                              <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                            </td>
+                          </tr>
+                        <% } %>
+                      <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        </div>
